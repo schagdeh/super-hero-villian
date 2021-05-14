@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        {/* will add landing page with navigation on top, search box, search button, my favourite button   */}
+        <h1>
+          Hello world here you can find all the superheroes and villians from
+          all universes.
+        </h1>
+        <section>
+          <div>
+            <input type="text" />
+            <button>Search</button>
+          </div>
+          <button>My Favourite</button>
+        </section>
+      </div>
+    );
+  }
 }
 
 export default App;
