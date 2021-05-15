@@ -51,7 +51,7 @@ class App extends Component {
     return (
       <div className="App">
         {/* will add landing page with navigation on top, search box, search button, my favourite button   */}
-        <header className="navBar">
+        <header className="headerNavBar">
           <Navigation></Navigation>
         </header>
 
@@ -67,11 +67,10 @@ class App extends Component {
           </div>
         </section>
 
-        <section>
-          <div>
-            results
+        <section className="searchResultsSection">
+          <div className="searchResultsContainer">
+            <h1>Your Search Results</h1>
             <SuperHeroResults superHeroList={this.state.superHeroList} />
-            <div>{this.state.error}</div>
           </div>
         </section>
       </div>

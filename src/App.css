@@ -1,21 +1,33 @@
 .App {
   /* text-align: center; */
 }
+/*  header section navbar */
+.headerNavBar {
+  width: 100%;
+  height: 6rem;
+  background-color: #20232a;
+  border-radius: 10px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
 
+/* search section */
 .searchHeader {
   text-align: center;
 }
 
 .searchSection {
   padding: 10px;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
 }
 
 .searchContainer {
-  width: 60%;
+  width: 80rem;
   background-color: #282c34;
-  height: 200px;
+  height: 12rem;
   border-radius: 8px;
   color: #ffffff;
 
@@ -25,4 +37,25 @@
   display: flex;
   justify-content: center;
 }
+
+/* search results section */
+
+.searchResultsSection {
+  padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchResultsContainer {
+  width: 80rem;
+    background-color: #282c34;
+    border-radius: 8px;
+    color: #ffffff;
+    text-align: center;
+    min-height: 40rem;
+    padding: 20px 0; 
+
+}
+
+
 

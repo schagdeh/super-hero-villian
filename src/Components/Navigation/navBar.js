@@ -5,7 +5,7 @@ import './navBar.css'
 export default class Navigation extends Component {
     render() {
         return (
-            <div>
+            <div className="navBarDiv">
                 <nav className="navBar">
                     {/* <a href="/">
                         <img src={superHeroesLogo} alt="superHeroesLogo" style={{width: 150, height: 150, borderRadius: '50%'}}/>

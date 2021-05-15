@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './superHeroResults.scoped.css'
 import SuperHero from '../SuperHeroResultItem/SuperHeroResultItem'
 
 export default class SuperHeroResults extends Component {
