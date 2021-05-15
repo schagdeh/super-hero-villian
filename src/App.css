@@ -6,3 +6,23 @@
   text-align: center;
 }
 
+.searchSection {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.searchContainer {
+  width: 60%;
+  background-color: #282c34;
+  height: 200px;
+  border-radius: 8px;
+  color: #ffffff;
+
+}
+
+.searchBoxContainer {
+  display: flex;
+  justify-content: center;
+}
+

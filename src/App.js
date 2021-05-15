@@ -54,10 +54,11 @@ class App extends Component {
         <header className="navBar">
           <Navigation></Navigation>
         </header>
+
         <section className="searchSection">
           <div className="searchContainer">
             <h1 className="searchHeader">Search your SuperHeroes</h1>
-            <div>
+            <div className="searchBoxContainer">
               <SearchBox
                 handleChange={this.handleChange}
                 searchText={this.state.searchText}
@@ -65,6 +66,7 @@ class App extends Component {
             </div>
           </div>
         </section>
+
         <section>
           <div>
             results
