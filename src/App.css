@@ -30,7 +30,6 @@
   height: 12rem;
   border-radius: 8px;
   color: #ffffff;
-
 }
 
 .searchBoxContainer {
@@ -42,20 +41,19 @@
 
 .searchResultsSection {
   padding: 10px;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .searchResultsContainer {
   width: 80rem;
-    background-color: #282c34;
-    border-radius: 8px;
-    color: #ffffff;
-    text-align: center;
-    min-height: 40rem;
-    padding: 20px 0; 
-
+  background-color: #282c34;
+  border-radius: 8px;
+  color: #ffffff;
+  text-align: center;
+  min-height: 40rem;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-
-

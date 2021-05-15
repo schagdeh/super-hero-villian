@@ -8,7 +8,7 @@ class SearchBox extends Component {
                 <input 
                 id="superHeroSearchInput"
                 type="search" 
-                placeholder="Enter a name" 
+                placeholder="Enter your favourite hero's name" 
                 onChange={this.props.handleChange}
                 value={this.props.searchText}
                 />
