@@ -1,9 +1,9 @@
 .App {
-  /* text-align: center; */
-}
-/*  header section navbar */
-.headerNavBar {
+  text-align: center;
   width: 100%;
+}
+/*  header section  */
+.headerNavBar {
   height: 6rem;
   background-color: #20232a;
   border-radius: 10px;
@@ -13,19 +13,20 @@
 }
 
 /* search section */
-.searchHeader {
-  text-align: center;
-}
 
 .searchSection {
-  padding: 10px;
   padding-top: 20px;
   display: flex;
   justify-content: center;
 }
 
+.searchHeader {
+  text-align: center;
+}
+
+
 .searchContainer {
-  width: 80rem;
+  width: 95%;
   background-color: #282c34;
   height: 12rem;
   border-radius: 8px;
@@ -40,13 +41,13 @@
 /* search results section */
 
 .searchResultsSection {
-  padding: 10px;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
 }
 
 .searchResultsContainer {
-  width: 80rem;
+  width: 95%;
   background-color: #282c34;
   border-radius: 8px;
   color: #ffffff;

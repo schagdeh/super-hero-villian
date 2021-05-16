@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import SearchBox from "./Components/SearchBox/searchBox";
 import axios from "axios";
-import SuperHeroResults from "./Components/SuperHeroResults/superHeroResults";
 import Navigation from "./Components/Navigation/navBar";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import Home from "./Home";
+import Favourite from './Components/FavouriteList/favouriteList'
 
 class App extends Component {
   constructor() {
@@ -12,7 +13,18 @@ class App extends Component {
       searchText: "",
       superHeroList: [],
       error: "",
+      favouriteList: [],
     };
+  }
+
+  addToFavList = (id) => {
+    const matchedId = this.state.superHeroList.filter(superhero => superhero.id === id);
+    console.log(matchedId, "matched id = ");
+    this.setState({
+      favouriteList: matchedId,
+    })
+    console.log(this.state.favouriteList);
+    console.log(this.state.favouriteList.length, "no of fav list");
   }
 
   //handleSearchSuperHeroes
@@ -29,10 +41,11 @@ class App extends Component {
       })
       .catch((error) =>
         this.setState({
-          error: error,
+          error: error.message,
         })
       );
   };
+
   handleChange = (e) => {
     this.setState({
       searchText: e.target.value,
@@ -49,31 +62,29 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        {/* will add landing page with navigation on top, search box, search button, my favourite button   */}
-        <header className="headerNavBar">
-          <Navigation></Navigation>
-        </header>
-
-        <section className="searchSection">
-          <div className="searchContainer">
-            <h1 className="searchHeader">Search your SuperHeroes</h1>
-            <div className="searchBoxContainer">
-              <SearchBox
+      <Router>
+        <div className="App">
+          {/* will add landing page with navigation on top, search box, search button, my favourite button   */}
+          <header className="headerNavBar">
+            <Navigation />
+          </header>
+          <Switch>
+            <Route path="/" exact>
+              <Home
                 handleChange={this.handleChange}
                 searchText={this.state.searchText}
+                superHeroList={this.state.superHeroList}
+                error={this.state.error}
+                addToFavList={this.addToFavList}
               />
-            </div>
-          </div>
-        </section>
-
-        <section className="searchResultsSection">
-          <div className="searchResultsContainer">
-            <h1>Your Search Results</h1>
-            <SuperHeroResults superHeroList={this.state.superHeroList} />
-          </div>
-        </section>
-      </div>
+            </Route>
+            <Route path="/favourite" exact>
+              <Favourite favouriteList={this.state.favouriteList}/>
+            </Route>
+            <Redirect to="/" />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

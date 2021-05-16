@@ -8,3 +8,18 @@
     justify-content: space-around;
     padding: 0;
 }
+
+.navBarUl a {
+    color: #cd9b9b;
+    text-decoration: none; 
+}
+
+.navBarUl a.active {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline;
+    
+}

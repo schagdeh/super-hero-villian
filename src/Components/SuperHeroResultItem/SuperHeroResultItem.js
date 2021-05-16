@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./SuperHeroResultItem.css";
 
 export default class SuperHero extends Component {
+
   render() {
     console.log(this.props.data);
     return (
@@ -21,7 +22,7 @@ export default class SuperHero extends Component {
           </div>
         </div>
         <div className="addToFavButtonDiv">
-          <button className="addToFavButton">add to Fav</button>
+          <button className="addToFavButton" onClick={() => this.props.addToFavList(this.props.data.id)}>add to Fav</button>
         </div>
       </div>
     );

@@ -7,7 +7,7 @@ export default class SuperHeroResults extends Component {
         return (
             <div>
                 {this.props.superHeroList ? this.props.superHeroList.map(superHero => 
-                    <SuperHeroResultItem data={superHero} key={superHero.id}/>
+                    <SuperHeroResultItem data={superHero} key={superHero.id} addToFavList={this.props.addToFavList} />
                 ) : <h1>No matching name found</h1>}
             </div>
         )
