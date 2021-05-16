@@ -1,0 +1,45 @@
+.superHeroResultDiv {
+    display: flex;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .superHeroImageDiv img {
+    height: 12rem;
+    border-radius: 1rem;
+  }
+  
+  .superHeroInfoDiv {
+    margin-left: 1rem;
+    text-align: left;
+    flex-grow: 2;
+  }
+  
+  .superHeroPowerStatsDiv {
+    padding-top: 5px;
+  }
+  
+  .addToFavButtonDiv {
+    display: flex;
+    align-items: flex-end;
+    margin: 10px;
+  }
+  
+  .addToFavButtonDiv button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: .5rem;
+  }
+  

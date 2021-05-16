@@ -15,7 +15,7 @@ export default class Navigation extends Component {
             </li>
             <li>
               <h1>
-                <NavLink exact={true} to="/favourite">Favourite()</NavLink>
+                <NavLink exact={true} to="/favourite">Favourite({this.props.favouriteList.length})</NavLink>
               </h1>
             </li>
           </ul>

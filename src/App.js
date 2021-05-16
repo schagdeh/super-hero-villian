@@ -4,7 +4,9 @@ import axios from "axios";
 import Navigation from "./Components/Navigation/navBar";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Home from "./Home";
-import Favourite from './Components/FavouriteList/favouriteList'
+import FavouriteList from './Components/FavouriteList/favouriteList'
+import fire from './Config/config';
+import 'firebase/database'
 
 class App extends Component {
   constructor() {
@@ -15,16 +17,27 @@ class App extends Component {
       error: "",
       favouriteList: [],
     };
+
+  }
+
+  componentDidMount() {
+    const previousFavouriteList = this.state.favouriteList;
+
+    fire.database().ref('favouriteList').on('child_added', snap => {
+      previousFavouriteList.push({
+        favouriteList: snap.val()
+      })
+      this.setState({
+        favouriteList: previousFavouriteList,
+      })
+    })
   }
 
   addToFavList = (id) => {
-    const matchedId = this.state.superHeroList.filter(superhero => superhero.id === id);
-    console.log(matchedId, "matched id = ");
-    this.setState({
-      favouriteList: matchedId,
-    })
-    console.log(this.state.favouriteList);
-    console.log(this.state.favouriteList.length, "no of fav list");
+    const  matchedId = this.state.superHeroList.filter(superhero => superhero.id === id);
+    const matched = matchedId[0]
+
+     fire.database().ref('favouriteList').push(matched);
   }
 
   //handleSearchSuperHeroes
@@ -44,6 +57,7 @@ class App extends Component {
           error: error.message,
         })
       );
+
   };
 
   handleChange = (e) => {
@@ -58,6 +72,7 @@ class App extends Component {
     if (this.state.searchText.length > 3) {
       this.handleSearchSuperHeroes();
     }
+
   };
 
   render() {
@@ -66,7 +81,7 @@ class App extends Component {
         <div className="App">
           {/* will add landing page with navigation on top, search box, search button, my favourite button   */}
           <header className="headerNavBar">
-            <Navigation />
+            <Navigation favouriteList={this.state.favouriteList}/>
           </header>
           <Switch>
             <Route path="/" exact>
@@ -79,7 +94,7 @@ class App extends Component {
               />
             </Route>
             <Route path="/favourite" exact>
-              <Favourite favouriteList={this.state.favouriteList}/>
+              <FavouriteList favouriteList={this.state.favouriteList}/>
             </Route>
             <Redirect to="/" />
           </Switch>
