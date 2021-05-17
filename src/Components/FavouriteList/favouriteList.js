@@ -5,9 +5,9 @@ export default class FavouriteList extends Component {
 
   render() {
     return (
-      <div className="superHeroResultDiv">
+      <div className="superHeroFavouriteDiv">
         {this.props.favouriteList ? this.props.favouriteList.map(fav => (
-            <FavouriteListItem favouriteListItem={fav}/>
+            <FavouriteListItem favouriteListItem={fav} /* delete={this.props.delete} *//>
         )): <h1>Something went wrong</h1>
         }
       </div>

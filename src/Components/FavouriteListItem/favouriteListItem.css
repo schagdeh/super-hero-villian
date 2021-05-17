@@ -1,15 +1,26 @@
-.superHeroResultDiv {
+.superHeroFavouriteDiv {
     display: flex;
     box-sizing: border-box;
     margin-bottom: 20px;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    width: 95%;
+    margin: auto;
+    flex-grow: 1;
+  }
+
+  .superHeroFavouriteItemDiv {
+    min-width: 25%;
+    background: #ffffff;
+    margin: 1rem;
+    border-radius: .5rem;
   }
   
-  .superHeroImageDiv img {
-    height: 12rem;
+  .superHeroFavItemImageDiv img {
+    height: 18rem;
+    width: 100%;
     border-radius: 1rem;
   }
   

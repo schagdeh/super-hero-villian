@@ -7,8 +7,8 @@ export default class FavouriteListItem extends Component {
     console.log(this.props.favouriteList);
     //   const { data } = this.props.favouriteList
     return (
-      <div className="superHeroResultDiv">
-        <div className="superHeroImageDiv">
+      <div className="superHeroFavouriteItemDiv">
+        <div className="superHeroFavItemImageDiv">
           <img src={this.props.favouriteListItem.favouriteList.image.url} alt="super pic" />
         </div>
         <div className="superHeroInfoDiv">
@@ -23,7 +23,7 @@ export default class FavouriteListItem extends Component {
           </div>
         </div>
         <div className="addToFavButtonDiv">
-          <button className="addToFavButton">add to Fav</button>
+          <button className="addToFavButton" /* onClick={() => this.props.delete(this.props.favouriteListItem.favouriteList.id)} */>Delete</button>
         </div>
       </div>
     );

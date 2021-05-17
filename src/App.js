@@ -25,13 +25,24 @@ class App extends Component {
 
     fire.database().ref('favouriteList').on('child_added', snap => {
       previousFavouriteList.push({
+        id: snap.key,
         favouriteList: snap.val()
       })
       this.setState({
         favouriteList: previousFavouriteList,
       })
-    })
+    });
+
+    // //deleting from favourite list
+    // fire.database().ref('favouriteList').on('child_removed', snap => {
+    //   previousFavouriteList.map(list => list.id === snap.key).splice(0,1)
+    // })
+
   }
+
+  // removeFromFavList = (id) => {
+  //   fire.database().ref('favouriteList').child(id).remove()
+  // }
 
   addToFavList = (id) => {
     const  matchedId = this.state.superHeroList.filter(superhero => superhero.id === id);
@@ -94,7 +105,7 @@ class App extends Component {
               />
             </Route>
             <Route path="/favourite" exact>
-              <FavouriteList favouriteList={this.state.favouriteList}/>
+              <FavouriteList favouriteList={this.state.favouriteList} /* delete={this.removeFromFavList} *//>
             </Route>
             <Redirect to="/" />
           </Switch>

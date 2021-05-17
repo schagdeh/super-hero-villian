@@ -1,0 +1,11 @@
+.superHeroResultDiv {
+    display: flex;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: auto;
+  }
