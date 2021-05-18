@@ -6,6 +6,7 @@ export default class SuperHero extends Component {
   render() {
     console.log(this.props.data);
     return (
+      // all the heroes item info is displayed in the form of cards.
       <div className="superHeroResultDiv">
         <div className="superHeroImageDiv">
           <img src={this.props.data.image.url} alt="super pic" />
@@ -22,6 +23,7 @@ export default class SuperHero extends Component {
           </div>
         </div>
         <div className="addToFavButtonDiv">
+          {/* onclick of button will pass the id to its parent's component and add the hero item to firebase list. */}
           <button className="addToFavButton" onClick={() => this.props.addToFavList(this.props.data.id)}>add to Fav</button>
         </div>
       </div>

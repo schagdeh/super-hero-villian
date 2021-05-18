@@ -4,6 +4,7 @@ import './searchBox.css'
 class SearchBox extends Component {
     render(props) {
         return (
+            // input to handle user input and search for the heroes.
             <div className="searchInputDiv">
                 <input 
                 id="superHeroSearchInput"

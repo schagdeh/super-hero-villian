@@ -3,16 +3,13 @@ import './favouriteListItem.css'
 
 export default class FavouriteListItem extends Component {
 
-
+//  it handles removing fav list from firebase DB, it passes 
+//  the id to its parent's container/component favouriteList.js
   handleRemoveFavList = (id) => {
     this.props.delete(id)
-    console.log(id);
   }
 
   render() {
-    console.log(this.props.favouriteList);
-    //   const { data } = this.props.favouriteList
-
     
     return (
       <div className="superHeroFavouriteItemDiv">
@@ -31,7 +28,10 @@ export default class FavouriteListItem extends Component {
           </div>
         </div>
         <div className="addToFavButtonDiv">
-          <button className="addToFavButton" onClick={() => this.handleRemoveFavList(this.props.id)} >Delete</button>
+          <button className="addToFavButton" 
+            onClick={() => this.handleRemoveFavList(this.props.id)} >
+              Delete
+          </button>
         </div>
       </div>
     );

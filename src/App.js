@@ -13,7 +13,7 @@ class App extends Component {
     super();
     this.state = {
       searchText: "", // this value comes from user input. its is superheroes name.
-      superHeroList: [], // list of all the superheros associate with this.state.searchText. data comes from api call function getSearchSuperHeroes()
+      superHeroList: [], // list of all the superheros associate with this.state.searchText. data comes from api call function getSuperHeroes()
       error: "",         // error if there is something wrong from server side
       favouriteList: [], // list of all the favorite superheroes stored in firebase realtime DB.
     };
@@ -63,7 +63,7 @@ class App extends Component {
   }
 
   //gets searched results form its api and set this.state.superHeroList to its data
-  getSearchSuperHeroes = () => {
+  getSuperHeroes = () => {
     axios
       .get(
         `https://superheroapi.com/api.php/1458682491139006/search/${this.state.searchText}`
@@ -93,9 +93,9 @@ class App extends Component {
         superHeroList: [],
       });
     }
-    // if this.searchText.length is greater than 3 than only the superHeroList is filled with the data from getSearchSuperHeroes() functions
-    if (this.state.searchText.length > 3) {
-      this.getSearchSuperHeroes();
+    // if this.searchText.length is greater than or equal to 3 than only the superHeroList is filled with the data from getSuperHeroes() functions
+    if (this.state.searchText.length >= 3) {
+      this.getSuperHeroes();
     }
 
   };
@@ -112,6 +112,7 @@ class App extends Component {
           </header>
           <Switch>
             <Route path="/" exact>
+              {/* its just a container to searchBox and superHeroResults components */}
               <Home
                 handleChange={this.handleChange}
                 searchText={this.state.searchText}
