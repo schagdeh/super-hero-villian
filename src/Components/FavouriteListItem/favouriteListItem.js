@@ -3,9 +3,17 @@ import './favouriteListItem.css'
 
 export default class FavouriteListItem extends Component {
 
+
+  handleRemoveFavList = (id) => {
+    this.props.delete(id)
+    console.log(id);
+  }
+
   render() {
     console.log(this.props.favouriteList);
     //   const { data } = this.props.favouriteList
+
+    
     return (
       <div className="superHeroFavouriteItemDiv">
         <div className="superHeroFavItemImageDiv">
@@ -23,7 +31,7 @@ export default class FavouriteListItem extends Component {
           </div>
         </div>
         <div className="addToFavButtonDiv">
-          <button className="addToFavButton" /* onClick={() => this.props.delete(this.props.favouriteListItem.favouriteList.id)} */>Delete</button>
+          <button className="addToFavButton" onClick={() => this.handleRemoveFavList(this.props.id)} >Delete</button>
         </div>
       </div>
     );

@@ -2,13 +2,14 @@
     display: flex;
     box-sizing: border-box;
     margin-bottom: 20px;
-    background: rgba(0, 0, 0, 0.2);
+    background: #282c34;
     border-radius: 1rem;
     justify-content: flex-start;
     flex-wrap: wrap;
     width: 95%;
     margin: auto;
     flex-grow: 1;
+    margin-top: 20px;
   }
 
   .superHeroFavouriteItemDiv {
